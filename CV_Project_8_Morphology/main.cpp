@@ -1,4 +1,3 @@
-//  CV_Project_2_Avg_Median_Filter
 //  Created by Daniel Rand on 9/6/19.
 
 #include <iostream>
@@ -11,16 +10,9 @@ class Morphology {
 public:
     int numRowsImg, numColsImg, minImg, maxImg, numRowsStructElem, numColsStructElem,
     minStrctElem, maxStrctElem, rowOrigin, colOrigin, rowFrameSize, colFrameSize;
-    // needs to dynamically allocate at run time
-    // of size numRowsImg + rowFrameSize*2 by  numColsImg + colFrameSize*2.
     int ** imgAry;
-    // a 2D array, need to dynamically allocate at run time
-    // of size numRowsImg + rowFrameSize*2 by numColsImg + colFrameSize * 2.
     int ** morphAry;
-    //a 2D array, need to dynamically allocate at run time
-    // of size numRowsStructElem by numColsStructElem.
     int ** structElemAry;
-    
     
 public:
     
@@ -52,7 +44,6 @@ public:
                 morphAry[i+rowFrameSize][j+colFrameSize] = current;
             }
         }
-        //Print array
     }
     
     void loadStruct (ifstream &structEl) {
@@ -147,21 +138,6 @@ public:
             for (int j = 0; j < cols; j++)
                 imgAry[i][j] = morphAry[i][j];
     }
-    /*
-     
-     - methods:
-     - computeFrameSize(...) // compute the rowFrameSize and colFrameSize
-     - loadImage  // load imgAry from input1, begins at (rowFrameSize, colFrameSize) and ends at ??
-     - loadstruct  // load structElem from input2
-     - zeroFrameImg // frame the input image with zero on those extra rows and extra cols.
-     
-     - initMorphAry( ) // initialize morphAry to zero
-     
-     - dilation () // as taught in class, on your own
-     - erosion () // as taught in class, on your own
-     - opening () // erosion follows by dilation
-     - closing () // dilation follows by erosion
-     - prettyPrint ()*/
 };
 
 int main(int argc, const char * argv[]) {
