@@ -86,8 +86,6 @@ public:
                     int structRow = 0, structCol = 0;
                     for (int row = i-rowOrigin; row < i + (numRowsStructElem-rowOrigin); row++) {
                         for (int col = j-colOrigin; col < j + (numColsStructElem-colOrigin); col++) {
-                            int old = morphAry [row][col];
-                            int structEl = structElemAry[structRow][structCol];
                             if (morphAry[row][col]==0)
                                 morphAry[row][col] = structElemAry[structRow][structCol];
                             structCol++;
